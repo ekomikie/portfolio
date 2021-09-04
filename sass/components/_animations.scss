@@ -856,7 +856,9 @@
 
 @media (max-width: $standard-sm) {
   .fadeFromRight,
-  .fadeFromLeft {
+  .fadeFromLeft,
+  .fadeFromBottom
+ {
       transform: none;
   }
 }
