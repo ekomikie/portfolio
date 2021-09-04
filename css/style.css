@@ -2249,7 +2249,7 @@ body {
 
 @media (max-width: 567px) {
   .fadeFromRight,
-  .fadeFromLeft,
+  .fadeFromLeft
    {
     transform: none; } }
 
