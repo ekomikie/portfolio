@@ -1,0 +1,95 @@
+.footer {
+  padding: 2rem 0;
+  background-color:$color-animated-circles;
+
+  .footer-container {
+    @include containerStyles(2rem, 2rem);
+     
+     .footer-logo {
+      width:150px;
+       margin:auto;
+       
+       a {
+         display:inline-block;
+          text-decoration: none;
+          img {
+            
+            width: 100%;
+            height: 100%;
+          }
+       }
+
+
+     @media (min-width:$md-screen) {
+      width: 20%;
+      
+      padding-left:0;
+      margin:auto;
+      cursor: pointer;
+        a {
+           display: inline-block; 
+          
+           padding-left: 2%;
+          img {
+           
+            
+            width: 100%;
+            height: 100%;
+          }
+        }
+     }
+
+     @media (min-width:$lg-screen) {
+      width: 15%;
+      
+      padding-left:0;
+      margin:auto;
+      cursor: pointer;
+        a {
+           display: inline-block; 
+           padding-left: 5%;
+          }
+       }
+
+       @media (min-width:$xl-screen) {
+        width: 15%;
+        
+        padding-left:0;
+        margin:auto;
+        cursor: pointer;
+          a {
+             display: inline-block; 
+             padding-left: 5%;
+            }
+         }
+     }
+     
+    .foot-links {
+      padding-top: 3rem;
+      @include flexRow(center, center);
+
+      .foot-box {
+        @include flexRow(center, center);
+
+        .social-icon{
+          padding-right: $s;
+          transition: all 0.2s ease-in-out;
+          &:hover {
+              @include socialIconStyles();
+            
+           }
+           
+          
+        }
+      }
+
+    }
+
+    .footer-text {
+    @include bodyTextStyles($font-body, 0.75rem, $color-sub-body, center, 1.1, 1.0);
+     padding-top: 2rem;
+      font-weight: 400;
+      
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.skillCard {
+  position: relative;
+  display: none;
+  transition-property: transform, opacity;
+  @include transitionTime($fast, ease);
+  &.show {
+      display: flex;
+  }
+  &.fadeOut {
+      transform: translateY(-1.5rem);
+      opacity: 0;
+  }
+  &.fadeIn {
+      transform: translateY(1.5rem);
+      opacity: 0;
+  }
+  &>div {
+      @include flexRow(center, center);
+      width: 8rem;
+      height: 8rem;
+      margin: $s;
+      background-color: $color-secondary-light;
+      transition-property: transform, box-shadow;
+      @include transitionTime($fast, ease);
+      &:hover {
+          transform: translateY(-0.5rem);
+          box-shadow: 0 1.5rem 1rem -1rem $color-accent-light;
+          &+p {
+            color: $color-accent-light;
+              bottom: -0.8rem;
+              text-align: center;
+              opacity: 1;
+          }
+      }
+  }
+  & img {
+      width: 4rem;
+      max-height: 4rem;
+  }
+  & p {
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      bottom: -$s;
+      transition-property: opacity, bottom;
+      @include transitionTime($fast, ease);
+      pointer-events: none;
+     
+  }
+}

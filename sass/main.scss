@@ -1,0 +1,39 @@
+
+//Abstracts
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+//Base
+@import 'base/reset';
+@import 'base/typography';
+
+
+
+//Layouts
+@import 'layouts/headers';
+@import 'layouts/sections';
+@import 'layouts/forms';
+@import 'layouts/footers';
+@import 'layouts/images';
+
+//Components
+@import 'components/animations';
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/modals';
+
+.area{
+  background: transparent;  
+   width: 100%;
+  height:100vh;
+}  //area closing tag
+
+
+
+ 
+
+ 
+
+
+
+

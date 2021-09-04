@@ -1,0 +1,123 @@
+.contact-form {
+  position:relative;
+  
+form {
+  opacity:0.9;
+  background-color: $color-secondary-light;
+  padding: $l $m;
+  margin: $l auto;
+  width: 95%;
+  @media (min-width:$md-screen) {
+    padding: $l $m;
+    margin: $l auto;
+    max-width: 720px;
+  }
+  & div { 
+      @include flexRow(flex-start, center);
+      margin-bottom: $l;
+      position: relative;
+      scroll-margin-top: $s;
+      &::after {
+          position: absolute;
+          display: block;
+          left: 0;
+          bottom: -$s;
+          color: red;
+          font-size: $xs;
+          opacity: 0;
+          transition: opacity 0.2s ease;
+      }
+      &.error {
+          & input,
+          textArea {
+              border-color: red;
+          }
+          &::after {
+              opacity: 1;
+          }
+      }
+  }
+  & label {
+      position: absolute;
+      width: 24px;
+      max-height: 24px;
+      left: $s;
+      & img {
+          width: inherit;
+      }
+  }
+  & input,
+  textarea {
+      width: 100%;
+      background: none;
+      outline: none;
+      border: 2px $color-body-text solid;
+      padding: 1em 1em 1em 3em;
+      font: 400 $s/1 "Open Sans", sans-serif;
+      color: $color-body-text;
+
+      resize: none;
+      transition: border-color 0.2s ease;
+      &:hover {
+          border-color: $color-primary
+      }
+      &:focus {
+          border-color:$color-primary;
+      }
+  }
+
+  button {
+    font: 700 $s/1 'Open Sans', sans-serif;
+    padding: 1em 2em;
+    border: none;
+    width:100%;
+    color: $color-body-text;
+    outline: none;
+    background-color: $color-accent-dark;
+    // margin: 0.5em;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        box-shadow: 0 1em 2em -1em $color-accent-light;
+        background-color: $color-accent-light;
+    }
+
+        .btnFill {
+          
+          width: 100%;
+          margin: 0;
+          background-color: $color-accent-dark;
+          transition-property: background-color, border-color, box-shadow;
+          &:hover,
+          &:focus {
+              background-color: $color-accent-light;
+             
+          }
+      }
+  }
+ 
+}
+
+#messageInput label {
+  top: $s;
+}
+
+#nameInput::after {
+  content: "What's your name?";
+}
+
+#emailInput::after {
+  content: "Please enter a valid email";
+}
+
+#subjectInput::after {
+  content: "How I can help you?";
+}
+
+#messageInput::after {
+  content: "No need to be shy ;)";
+}
+
+}

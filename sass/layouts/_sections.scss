@@ -1,0 +1,582 @@
+
+.hero-container {
+    
+  @include containerStyles(1rem, 1rem);
+
+  .hero-flex {
+   @include flexColumn(center, center);
+    padding-bottom: 1rem;
+   
+    .hero-text-content {
+      width:100%;
+      padding-top:$s;
+
+      .hero-intro {
+        
+       display:block;
+         
+        p {
+          @include bodyTextStyles($font-body, $s, $color-body-text, center, 1.1, 2);
+          margin-block:1em;
+          
+           .highlight { 
+            font-weight:700;
+            color:$color-primary;
+            display:inline-block;
+           }
+         }
+      }
+      .compress-text {
+        padding:4.5rem 1rem 2rem 4.6rem;
+      }
+      .expand-text {
+        padding:2.5rem 1rem 2rem 1rem;
+      }
+    
+
+      .hero-text-content-box-lg  {
+        display: none;
+      }
+        
+      .hero-buttons {
+        @include flexColumn(center, center);
+
+        
+        @media (min-width: 550px) {
+      
+          @include flexRow(center, center);
+
+
+          & button {
+            margin-right: 1em;
+          }
+     
+         }
+          
+        .heroLinks {
+         
+        @media (min-width:$md-screen) {
+          &:first-child {
+            margin-right: 0.4em;
+          }
+
+          &:last-child {
+            margin-left: 0.4em;
+          }
+         }
+      }
+    }
+  }
+
+    @media (min-width: $md-screen) {
+      
+      @include flexRow(center, center);
+      
+      .hero-text-content {
+        width:50%;
+
+        #hero-text-content-box {
+          display: none;
+        }
+
+        .hero-text-content-box-lg {
+          display: block;
+          padding:2rem 2rem 0.5rem 2rem;
+          transition: padding 0.3s ease-in-out;
+
+          &::after {
+            position: absolute;
+            top: 40%;
+            left: 5%;
+            z-index:-4;
+            display: none;
+            content: "</>";
+            color: $color-section-title;
+            font-size: 18vw;
+            font-weight: bold;
+            opacity: 0.1;
+
+            @media (min-width:$lg-screen) {
+              display: block;
+            }
+          }
+           
+          p {
+            @include bodyTextStyles($font-body, 1.2rem, $color-body-text, center, 1.1, 1.7);
+            margin-block:1em;
+
+            @media (min-width:$lg-screen) {
+              font-size:$m;
+            }
+
+            @media (min-width:$xl-screen) {
+              font-size:$l;
+              line-height:1.5;
+            }
+
+            .highlight { 
+              font-weight:700;
+              color:$color-primary;
+              display:inline-block;
+              
+
+              @media (min-width:$lg-screen) {
+                font-weight:800;
+              }
+           }
+
+         }
+           
+        }
+      }
+
+    }
+ }
+
+  @media (min-width:$md-screen) {
+    padding-top: 4.5rem;
+  }
+}
+
+.about-section {
+ 
+  @include sectionsStyles;
+
+  .about-container {
+    @include containerStyles(2rem, 2rem);
+
+    .about-section-header {
+      &::before {
+        @include sectionHeader();
+        content: "<about me>";
+      }
+    }
+
+    .about-flex-box {
+      
+     @include flexColumn(center, center);
+      @media (min-width:$md-screen) {
+        flex-direction: row;
+      }
+
+      .about-wrapper {
+        @include flexColumn(center, center);
+
+        @media (min-width:$md-screen) {
+          width:50%;
+          margin: 3rem;
+        }
+
+        .about-frame {
+          @include flexColumn(center, center);
+          position: relative;
+          width:150px;
+          height:150px;
+          border-radius: 50%;
+          background-color: $color-secondary-light;
+          
+         
+
+        .overlay-div  {
+          position: absolute;
+          bottom:0;
+          left:24px;
+          width:102px;
+          height:20px;
+          background-color: $color-secondary-main;
+        }
+        
+       }
+
+       .connect-text {
+        @include bodyTextStyles($font-main, $s, $color-primary, center, 1.2, 1.4);
+         font-weight:bold;
+         padding: 1em 0;
+         text-transform: uppercase;
+
+         @media (min-width:$md-screen) {
+         font-size: $m;
+         }
+       }
+
+       .about-links {
+         @include flexRow(space-evenly, center);
+
+         .social-icon {
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+              @include socialIconStyles();
+           }
+           
+          &:nth-child(2) {
+              margin:0 1rem;
+              }
+         }
+         
+        
+       }
+
+      }
+     
+     .about-details {
+      padding:0 1rem;
+      @media (min-width:$md-screen) {
+        padding-top: 2rem;
+      }
+
+      .about-heading {
+        font-family: $font-main;
+        color: $color-primary;
+        font-weight: bold;
+        font-size: $s;
+        line-height: 1.3;
+        padding-top: 2em;
+        padding-bottom:1em;
+
+        @media (min-width:$md-screen) {
+          padding-top: 0;
+          font-size: $m;
+          font-weight: 700;
+
+        }
+
+        @media (min-width:$lg-screen) {
+          padding-top: 0;
+          font-size:1.8rem;
+          font-weight: 700;
+
+        }
+      }
+      .about-text {
+        @include bodyTextStyles($font-body, $s, $color-sub-body, start, 1.2, 1.3);
+        background-color:$color-animated-circles;
+        opacity:0.9;
+        border-left:2px $color-primary solid;
+        padding: 1em;
+       
+        @media (min-width:$lg-screen) {
+          font-size: 1.3rem;
+        }
+      }
+     }
+    }
+
+  }
+}
+
+.skills-section{
+  
+  @include sectionsStyles;
+  
+  .skills-container {
+   @include containerStyles(2rem, 2rem);
+
+    .skills-section-header {
+      &::before {
+        @include sectionHeader();
+        content: "<skills>";
+      }
+    }
+
+    .section-flex-box {
+       width:100%;
+      @include flexColumn(center, center);
+     
+      @media (min-width:$md-screen) {
+        margin-top:4rem;
+        @include flexRow(space-between, center);
+        
+      }
+
+      .rightFade {
+           width: 100%;
+          
+           .slider {
+            margin: $m auto;
+            max-width: 600px;
+
+            
+            & h3 {
+                position: relative;
+                text-align: center;
+                font: 700 $s/1 $font-body ;
+                letter-spacing: 0.1em;
+                padding-block: 1em;
+                color: $color-sub-body;
+                margin: 0 auto;
+                border-bottom: 1px solid $color-secondary-light;
+                width: 75%;
+                transition: color $medium ease;
+
+          
+                &:hover {
+                    cursor: pointer;
+                    color: $color-accent-light;
+                }
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    bottom: -2px;
+                    left: 50%;
+                    width: 0%;
+                    opacity: 0;
+                    height: 3px;
+                    background-color: $color-accent-light;
+                    transition-property: left, width, opacity;
+                    @include transitionTime($medium, ease);
+                }
+                &.active {
+                    color: $color-accent-light;
+                    &::after {
+                        width: 100%;
+                        left: 0;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        
+            .skillBlock {
+                @include flexRow(center, center);
+                flex-wrap: wrap;
+                margin-top: $l;
+            }
+            
+            @media (min-width: $md-screen) {
+                .slider {
+                    @include flexRow(center, center);
+                }
+            }
+        }
+        
+    }
+  }
+}
+
+.project-section {
+  @include sectionsStyles;
+
+  .project-container {
+    @include containerStyles(2rem, 2rem);
+
+    .section-flex-box-2 {
+      padding: 0.8rem;
+      background-color:$color-animated-circles;
+      opacity:0.9;
+      width: 100%;
+      @include flexColumn(center, center);
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+
+      .item {
+        width:90%; 
+        margin: 1rem 0;
+        
+        img {
+          width: 100%;
+        }
+       
+      }
+     
+        @media (min-width:$md-screen) {
+          padding: 0;
+       @include flexRow(space-evenly, center);
+        flex-wrap: wrap;
+
+        .item {
+          width:40%; 
+          margin: 2rem 0;
+          
+          img {
+            width: 100%;
+          }
+         
+        }
+
+      }
+
+      
+
+   }
+
+    
+    
+    .project-section-header {
+      &::before {
+        @include sectionHeader();
+        content: "<projects>";
+      }
+    }
+
+    .lead {
+      @include bodyTextStyles($font-body, $s, $color-sub-body, center, 1.1, 1.0);
+       margin-bottom: 2em;
+      
+      @media (min-width:$md-screen) {
+        font-size:$m;
+      }
+
+      @media (min-width:$lg-screen) {
+        font-size:$l;
+      }
+     }
+
+    .project-svg-image {
+      max-width: 100%;
+      @media (min-width:$md-screen) {
+        
+      }
+         img {
+           width: 100%;
+         }
+    }
+  }
+}
+
+.contact-section {
+  @include sectionsStyles;
+  .contact-container {
+    @include containerStyles(2rem, 2rem);
+
+    .contact-section-header {
+      &::before {
+        @include sectionHeader();
+        content: "<contact me>";
+      }
+    }
+    .contact-flex-box{
+     @include flexColumn(center, center);
+      @media (min-width:$md-screen){
+        flex-direction: row-reverse;
+       }
+
+    .contact-text-box {
+      position:relative;
+      z-index:-1;
+      margin: 2rem 0;
+      @media (min-width:$md-screen) {
+        margin: 1rem 0;
+      }
+        
+      .contact-text {
+        width:98%;
+        padding: $s;
+        background-color:$color-animated-circles;
+        border-left:2px $color-primary solid;
+        @include bodyTextStyles($font-body, $s, $color-sub-body, start, 1.2, 1.3);
+        
+        @media (min-width:1024px) {
+          font-size: 1.4rem;
+        }
+      }
+    }
+   }
+
+    
+     
+     
+      .contact-items {
+        @include flexColumn(space-evenly, start);
+
+        @media (min-width: $md-screen) {
+          margin-top: 1rem;
+         @include flexRow(space-evenly, center);
+        }
+
+        @media (min-width:$lg-screen) {
+          margin-top: 2rem;
+        }
+
+        @media (min-width: 1200px $xl-screen) {
+          margin-top: 4rem;
+        }
+
+        .contact-item {
+          display: flex;
+          padding: $s 0 $s $s;
+
+          .contact-icon {
+            padding-right:$s;
+          }
+         
+          .contact-value {
+            border-left: 2px solid $color-secondary-light;
+            padding:0.3em 0 0 1em;
+            font-size: $s;
+            font-family: $font-body;
+            color:$color-sub-body;
+
+            @media (min-width: 1024px) {
+              font-size: 1.4em;
+            }
+          }
+        }
+      }
+
+      .line-wrapper {
+        margin: 2.5rem 0;
+        @include flexRow(center, center);
+
+        @media (min-width:1200px) {
+          margin: 3rem 0;
+        }
+
+        .left-line {
+          background-color: #f2f1f3;
+          width:30%;
+          height: 2px;
+          margin-right: 1.5rem;
+
+          @media (min-width:767px) {
+            width:40%;
+          }
+
+        }
+
+        .or-text {
+          font-family: $font-body;
+          color:$color-body-text;
+        }
+
+        .right-line {
+          background-color: $color-body-text;
+          width:30%;
+          height: 2px;
+          margin-left: 1.5rem;
+
+          @media (min-width:$md-screen) {
+            width:40%;
+          }
+
+        }
+      }
+
+     .form-wrapper {
+      text-align: center;
+
+      .form-header {
+       text-decoration: none;
+       font-size: 1rem;
+       font-family: $font-main;
+       color:$color-sub-body;
+       font-weight: 500;
+       transition: color 0.2s ease;
+
+       @media (min-width:$md-screen) {
+        font-size: 1.2rem;
+        font-weight: 600;
+       }
+
+       @media (min-width:$lg-screen) {
+        font-size: 1.3rem;
+        }
+
+       @media (min-width:$xl-screen) {
+        font-size: 1.4rem;
+       
+         }
+       }
+     }
+  }
+}
