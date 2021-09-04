@@ -2249,7 +2249,9 @@ body {
 
 @media (max-width: 567px) {
   .fadeFromRight,
-  .fadeFromLeft {
+  .fadeFromLeft,
+  .fadeFromBottom
+   {
     transform: none; } }
 
 button {
