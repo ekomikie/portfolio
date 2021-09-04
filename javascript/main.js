@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
     if (splashScreen) {
         splashScreen.style.display = "flex";
         splashScreen.classList.add("loaded");
-        setTimeout(() => splashScreen.style.display = "none", 4000);
+        setTimeout(() => splashScreen.style.display = "none", 4300);
     }
     document.body.style.visibility = "visible";
     document.body.style.opacity = 1;
