@@ -2250,7 +2250,6 @@ body {
 @media (max-width: 567px) {
   .fadeFromRight,
   .fadeFromLeft,
-  .fadeFromBottom
    {
     transform: none; } }
 
